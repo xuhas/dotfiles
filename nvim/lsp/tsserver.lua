@@ -1,1 +1,2 @@
-/Users/xhulio.hasani/.config/nvim/lsp/tsserver.lua
+require'lspconfig'.tsserver.setup{}
+
