@@ -1,0 +1,1 @@
+/Users/xhulio.hasani/.config/nvim/init.vim
