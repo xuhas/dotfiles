@@ -102,10 +102,10 @@ let NERDTreeShowHidden=1
 " Language servers "
 lua << EOF
 require'lspinstall'.setup() -- important
-
-local servers = require'lspinstall'.installed_servers()
-for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{ on_attach=require'completion'.on_attach }
-end
+require('lsp_config')
+--local servers = require'lspinstall'.installed_servers()
+--for _, server in pairs(servers) do
+--  require'lspconfig'[server].setup{ on_attach=require'completion'.on_attach }
+--end
 
 EOF
