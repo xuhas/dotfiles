@@ -30,6 +30,7 @@ end
 
 lsp.tsserver.setup{on_attach=custom_attach}
 lsp.clangd.setup{on_attach=custom_attach}
+lsp.gopls.setup{on_attach=custom_attach}
 lsp.sumneko_lua.setup{
 	on_attach=custom_attach,
 	settings = {

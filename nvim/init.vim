@@ -1,4 +1,4 @@
-call plug#begin() 
+call plug#begin()
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/completion-nvim'
@@ -10,7 +10,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'arzg/vim-colors-xcode'
+"Plug 'arzg/vim-colors-xcode'
+Plug 'eddyekofo94/gruvbox-flat.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'neovim/nvim-lspconfig'
@@ -18,6 +19,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'github/copilot.vim'
 call plug#end() 
 
@@ -64,16 +66,18 @@ vnoremap K :m '<-2<CR>gv=gv
 " Close nerdtree if only windows left is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 set mouse=a
+" THEME "
+colorscheme gruvbox-flat
 
 "" VIM XCODE THEME"
-colorscheme xcodedark
-set termguicolors
-augroup vim-colors-xcode
-    autocmd!
-augroup END
-
-autocmd vim-colors-xcode ColorScheme * hi Comment        cterm=italic gui=italic
-autocmd vim-colors-xcode ColorScheme * hi SpecialComment cterm=italic gui=italic
+""colorscheme xcodedark
+""set termguicolors
+""augroup vim-colors-xcode
+""    autocmd!
+""augroup END
+""
+""autocmd vim-colors-xcode ColorScheme * hi Comment        cterm=italic gui=italic
+""autocmd vim-colors-xcode ColorScheme * hi SpecialComment cterm=italic gui=italic
 
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
