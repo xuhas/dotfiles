@@ -19,6 +19,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'github/copilot.vim'
+Plug 'eslint/eslint'
 call plug#end() 
 
 
@@ -114,6 +115,8 @@ nnoremap k gk
 set clipboard^=unnamed,unnamedplus
 let NERDTreeShowHidden=1
 set completeopt=menu,menuone,noselect
+set ignorecase
+set smartcase
 
 lua << EOF
   -- Setup nvim-cmp.
