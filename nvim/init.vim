@@ -117,7 +117,8 @@ let NERDTreeShowHidden=1
 set completeopt=menu,menuone,noselect
 set ignorecase
 set smartcase
-
+set listchars=tab:>·,trail:~,extends:>,precedes:<,space:.
+set list
 lua << EOF
   -- Setup nvim-cmp.
   local nvim_lsp = require('lspconfig')
