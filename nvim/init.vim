@@ -20,6 +20,9 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'github/copilot.vim'
 Plug 'eslint/eslint'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end() 
 
 
@@ -182,14 +185,29 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright',  'tsserver'  }
+local servers = { 'pyright',  'tsserver', 'gopls'}
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
+    if lsp == 'gopls' then
+        nvim_lsp.gopls.setup {
+            on_attach = on_attach,
+            cmd = {"gopls", "serve"},
+            settings = {
+                gopls = {
+                    analyses = {
+                      unusedparams = true,
+                    },
+                    staticcheck = true,
+                },
+            },
+        }
+    else
+        nvim_lsp[lsp].setup {
+            on_attach = on_attach,
+            flags = {
+                debounce_text_changes = 150,
+                }
+            }
+    end
 end
 
 --
