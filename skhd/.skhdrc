@@ -1,5 +1,5 @@
 # opens iTerm2
-alt - t: osascript "$HOME"/.config/homemadeScripts/open_iterm.scpt
+alt - t: osascript "$HOME"/.config/homemadeScripts/openIterm.scpt
 
 # Show system statistics
 fn + lalt - 1 : "${HOME}"/.config/yabai/scripts/show_cpu.sh
@@ -48,6 +48,15 @@ lctrl + alt - l : \
     yabai -m window --resize right:20:0 ; \
     yabai -m window --resize left:20:0
 
+# Fast Resize window
+shift + lctrl + alt - h : \
+    yabai -m window --resize left:-40:0 ; \
+    yabai -m window --resize right:-40:0
+
+shift + lctrl + alt - l : \
+    yabai -m window --resize right:40:0 ; \
+    yabai -m window --resize left:40:0
+
 # Float and center window
 shift + alt - c : yabai -m window --toggle float;\
                   yabai -m window --grid 4:4:1:1:2:2
@@ -73,20 +82,20 @@ shift + alt - r : yabai -m space --rotate 270
 shift + alt - x : yabai -m space --mirror x-axis
 shift + alt - y : yabai -m space --mirror y-axis
 
-# Set insertion point for focused container
-shift + lctrl + alt - h : yabai -m window --insert west
-shift + lctrl + alt - j : yabai -m window --insert south
-shift + lctrl + alt - k : yabai -m window --insert north
-shift + lctrl + alt - l : yabai -m window --insert east
+## Set insertion point for focused container
+#shift + lctrl + alt - h : yabai -m window --insert west
+#shift + lctrl + alt - j : yabai -m window --insert south
+#shift + lctrl + alt - k : yabai -m window --insert north
+#shift + lctrl + alt - l : yabai -m window --insert east
 
 # Float / Unfloat window
 shift + alt - space : yabai -m window --toggle float
 
-# # Restart Yabai
-# shift + lctrl + alt - r : 
-#     /usr/bin/env osascript <<< \
-#         "display notification \"Restarting Yabai\" with title \"Yabai\""; \
-#     launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+# Restart Yabai
+shift + lctrl + alt - r :
+    /usr/bin/env osascript <<< \
+        "display notification \"Restarting Yabai\" with title \"Yabai\""; \
+    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # Make window native fullscreen
 alt - f         : yabai -m window --toggle zoom-fullscreen
@@ -96,7 +105,7 @@ shift + alt - f : yabai -m window --toggle native-fullscreen
 # lctrl - 1: yabai -m space --focus 1
 # lctrl - 2: yabai -m space --focus 2
 # lctrl - 3: yabai -m space --focus 3
-# lctrl - 4: yabai -m space --focus 4 
+# lctrl - 4: yabai -m space --focus 4
 # lctrl - 5: yabai -m space --focus 5
 # lctrl - 6: yabai -m space --focus 6
 # lctrl - 7: yabai -m space --focus 7
@@ -104,8 +113,8 @@ shift + alt - f : yabai -m window --toggle native-fullscreen
 # lctrl - 9: yabai -m space --focus 9
 
 # Create new virtual desktop and focus it
-lctrl + alt - n: yabai -m space --create && \
-                 set index (yabai -m query --displays --display | jq '.spaces[-1]') && \
-                 yabai -m space --focus $index
-
-ctrl + alt -d: yabai -m space --destroy
+# lctrl + alt - n: yabai -m space --create && \
+#                  set index (yabai -m query --displays --display | jq '.spaces[-1]') && \
+#                  yabai -m space --focus $index
+# 
+# ctrl + alt -d: yabai -m space --destroy
