@@ -4,4 +4,3 @@
 ln -s $PWD/yabai/.yabairc ~/.yabairc
 ln -s $PWD/skhd/.skhdrc ~/.skhdrc
 
-
