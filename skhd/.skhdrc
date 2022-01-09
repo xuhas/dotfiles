@@ -1,5 +1,6 @@
 # opens iTerm2
-alt - t: osascript "$HOME"/.config/homemadeScripts/openIterm.scpt
+#alt - t: osascript "${HOME}"/.config/homemadeScripts/openIterm.scpt
+alt - t: osascript ~/dotfiles/automation/open_term.scpt
 
 # Show system statistics
 fn + lalt - 1 : "${HOME}"/.config/yabai/scripts/show_cpu.sh
