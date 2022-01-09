@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+spacebar -m config display              all
 spacebar -m config position             top
 spacebar -m config height               22
 spacebar -m config title                on
